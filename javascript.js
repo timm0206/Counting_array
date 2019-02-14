@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", Init);
 
 const newArray = [];
 
-let counter = 1;
+let counter = 0;
 
 function Init() {
   loop();
@@ -12,12 +12,12 @@ function Init() {
 
 function loop() {
   console.log(newArray);
-  newArray.push(counter);
+  newArray.unshift(counter);
 
   counter++;
 
-  if (counter > 10) {
-    newArray.splice(0, 1);
+  if (counter > 9) {
+    newArray.pop();
 
     setTimeout(loop, 1000);
   } else {
